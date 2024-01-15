@@ -108,6 +108,13 @@
         "enableDiagnostics": {
             "type": "bool"
         },
+		"enableScheduledAlerts": {
+            "type": "bool",
+            "metadata": {
+                "description": "Enable Scheduled analytics rules"
+            },
+            "defaultValue": false
+        },
         "_artifactsLocation": {
             "type": "string",
             "metadata": {
@@ -254,6 +261,9 @@
                     },
                     "workspaceName": {
                         "value": "[parameters('workspaceName')]"
+                    },
+					"enableAlerts": {
+                        "value": "[parameters('enableScheduledAlerts')]"
                     },
                     "location": {
                         "value": "[parameters('location')]"
