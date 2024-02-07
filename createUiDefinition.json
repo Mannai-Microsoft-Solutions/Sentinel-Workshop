@@ -264,6 +264,34 @@
                           "required": false
                       },
                       "visible": true
+                  },
+		  {
+                    "name": "enableSolutionsEssentials",
+                      "type": "Microsoft.Common.DropDown",
+                      "label": "Select Essentials Content Hub solutions to install",
+                      "placeholder": "",
+                      "multiselect": true,
+                      "filter": true,
+                      "filterPlaceholder": "Filter items ...",
+                      "multiLine": true,
+                      "defaultDescription": "A value for selection",
+                      "toolTip": "Select essentials solutions that you would like to install",
+                      "constraints": {
+                          "allowedValues": [                            
+                            {
+                                "label": "SOC Process Framework",
+                                "description": "The SOC Process Framework Solution is built in order to easily integrate with Microsoft Sentinel and build a standard SOC Process and Procedure Framework within your Organization.",
+                                "value": "SOC Process Framework"
+                            },
+                            {
+                                "label": "UEBA Essentials",
+                                "description": "The Sentinel UEBA content package will provide you with various queries based on UEBA tables, that allows you to hunt for tailored threat scenarios.",
+                                "value": "UEBA Essentials"
+                            }
+                          ],
+                          "required": false
+                      },
+                      "visible": false
                   }
               ]
           },
@@ -479,7 +507,7 @@
             "identityProviders": "[steps('settings').identityProviders]",
             "enableDiagnostics": "[steps('settings').enableDiagnostics]",
             "enableSolutions1P": "[steps('solutions').enableSolutions1P]",
-	    "enableSolutionsEssentials": "",
+	    "enableSolutionsEssentials": "[steps('solutions').enableSolutionsEssentials]",
             "enableDataConnectors": "[steps('dataConnectors').enableDataConnectors]",			
             "aadStreams": "[steps('dataConnectors').aadStreams]",
             "location": "[location()]",
