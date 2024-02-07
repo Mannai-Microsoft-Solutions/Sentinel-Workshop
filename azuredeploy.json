@@ -255,7 +255,7 @@
             }
         },
         {
-            "condition": "[or(not(empty(parameters('enableSolutions1P'))))]",
+            "condition": "[not(empty(parameters('enableSolutions1P')))]",
             "name": "enableSolutionsAndAlerts",
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2020-06-01",
