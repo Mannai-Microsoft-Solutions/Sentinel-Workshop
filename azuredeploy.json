@@ -279,12 +279,15 @@
                     },
                     "severityLevels": {
                         "value": "[replace(replace(string(parameters('severityLevels')),'[',''),']','')]"
-					},	
-					"enableAlerts": {
+		     },	
+		     "enableAlerts": {
                         "value": "[parameters('enableScheduledAlerts')]"
                     },
                     "location": {
                         "value": "[parameters('location')]"
+                    },
+                    "_artifactsLocation": {
+                        "value": "[parameters('_artifactsLocation')]"
                     }
                 }
             }
