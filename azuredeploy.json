@@ -55,6 +55,13 @@
             },
             "defaultValue": []
         },
+		 "severityLevels": {
+            "type": "array",
+            "metadata": {
+                "description": "Severity levels desired for Analytics Rules"
+            },
+            "defaultValue": []
+        },
         "dailyQuota": {
             "type": "int",
             "metadata": {
@@ -108,6 +115,13 @@
         "enableDiagnostics": {
             "type": "bool"
         },
+        "enableMLAlerts": {
+            "type": "bool",
+            "metadata": {
+                "description": "Enable ML Behavior Analytics rules"
+            },
+            "defaultValue": false
+        },		
 		"enableScheduledAlerts": {
             "type": "bool",
             "metadata": {
@@ -262,6 +276,9 @@
                     "workspaceName": {
                         "value": "[parameters('workspaceName')]"
                     },
+                    "severityLevels": {
+                        "value": "[replace(replace(string(parameters('severityLevels')),'[',''),']','')]"
+					},	
 					"enableAlerts": {
                         "value": "[parameters('enableScheduledAlerts')]"
                     },
