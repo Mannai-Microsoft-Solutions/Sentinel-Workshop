@@ -22,6 +22,16 @@
             },
             "defaultValue": ""
         },
+        "enableAlerts": {
+            "type": "bool",
+            "metadata": {
+                "description": "whether to enable scheduled analytic rules or not"
+            },
+            "defaultValue": false
+        },
+        "severityLevels": {
+            "type": "string"
+        },		
         "location": {
             "type": "string"
         },
@@ -33,7 +43,8 @@
     "functions": [],
     "variables": {
         "identityName": "[concat('userIdentity',uniqueString(resourceGroup().id))]",
-        "solutions": "[replace(concat(parameters('enableSolutions1P'),if(and(not(empty(parameters('enableSolutions1P'))),not(empty(parameters('enableSolutions1P')))))),'\"','\\\"')]"
+        "solutions": "[replace(concat(parameters('enableSolutions1P'),if(and(not(empty(parameters('enableSolutions1P'))),not(empty(parameters('enableSolutions1P')))))),'\"','\\\"')]",
+		"severities": "[if(empty(parameters('severityLevels')),'None',parameters('severityLevels'))]"
     },
     "resources": [
         {
