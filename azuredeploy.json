@@ -55,7 +55,7 @@
             },
             "defaultValue": []
         },
-		 "severityLevels": {
+	 "severityLevels": {
             "type": "array",
             "metadata": {
                 "description": "Severity levels desired for Analytics Rules"
@@ -122,7 +122,7 @@
             },
             "defaultValue": false
         },		
-		"enableScheduledAlerts": {
+	"enableScheduledAlerts": {
             "type": "bool",
             "metadata": {
                 "description": "Enable Scheduled analytics rules"
