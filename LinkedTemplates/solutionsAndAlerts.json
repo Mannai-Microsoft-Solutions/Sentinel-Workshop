@@ -38,13 +38,16 @@
         "roleGuid": {
             "type": "string",
             "defaultValue": "[newGuid()]"
+        },
+        "_artifactsLocation": {
+            "type": "string"
         }
     },
     "functions": [],
     "variables": {
         "identityName": "[concat('userIdentity',uniqueString(resourceGroup().id))]",
         "solutions": "[replace(concat(parameters('enableSolutions1P'),if(and(not(empty(parameters('enableSolutions1P'))),not(empty(parameters('enableSolutions1P')))))),'\"','\\\"')]",
-		"severities": "[if(empty(parameters('severityLevels')),'None',parameters('severityLevels'))]"
+	"severities": "[if(empty(parameters('severityLevels')),'None',parameters('severityLevels'))]"
     },
     "resources": [
         {
