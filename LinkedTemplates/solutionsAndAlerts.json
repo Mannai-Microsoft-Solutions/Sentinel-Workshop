@@ -46,7 +46,7 @@
     "functions": [],
     "variables": {
         "identityName": "[concat('userIdentity',uniqueString(resourceGroup().id))]",
-        "solutions": "[replace(parameters('enableSolutions1P'),'\"','\\\"')]",
+       "[replace(concat(parameters('enableSolutions1P'),if(or(not(empty(parameters('enableSolutionsEssentials'))),not(empty(parameters('enableSolutions1P')))),concat(',',parameters('enableSolutionsTraining')),parameters('enableSolutionsTraining'))),'\"','\\\"')]",
 	"severities": "[if(empty(parameters('severityLevels')),'None',parameters('severityLevels'))]"
     },
     "resources": [
