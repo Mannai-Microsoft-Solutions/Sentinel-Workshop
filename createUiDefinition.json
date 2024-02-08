@@ -326,7 +326,7 @@
                           ],
                           "required": false
                       },
-                      "visible": true
+                      "visible": false
                   },
                   {
                     "name": "enableSolutionsTraining",
@@ -354,7 +354,7 @@
                           ],
                           "required": false
                       },
-                      "visible": true
+                      "visible": false
                   }
               ]
           },
