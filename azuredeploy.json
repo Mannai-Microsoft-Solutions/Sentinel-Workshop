@@ -91,6 +91,20 @@
             },
             "defaultValue": []
         },
+        "enableSolutionsEssentials": {
+            "type": "array",
+            "metadata": {
+                "description": "The list of Content Hub Essentials solutions to deploy."
+            },
+            "defaultValue": []
+        },
+        "enableSolutionsTraining": {
+            "type": "array",
+            "metadata": {
+                "description": "The list of Content Hub Training solutions to deploy."
+            },
+            "defaultValue": []
+        },		
         "aadStreams": {
             "type": "array",
             "metadata": {
@@ -122,7 +136,7 @@
             },
             "defaultValue": false
         },		
-	"enableScheduledAlerts": {
+		"enableScheduledAlerts": {
             "type": "bool",
             "metadata": {
                 "description": "Enable Scheduled analytics rules"
@@ -255,7 +269,7 @@
             }
         },
         {
-            "condition": "[not(empty(parameters('enableSolutions1P')))]",
+            "condition": "[or(not(empty(parameters('enableSolutions1P'))),not(empty(parameters('enableSolutionsEssentials'))),not(empty(parameters('enableSolutionsTraining'))))]",
             "name": "enableSolutionsAndAlerts",
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2020-06-01",
@@ -274,13 +288,19 @@
                     "enableSolutions1P": {
                         "value": "[replace(replace(string(parameters('enableSolutions1P')),'[',''),']','')]"
                     },
+					"enableSolutionsEssentials": {
+                        "value": "[replace(replace(string(parameters('enableSolutionsEssentials')),'[',''),']','')]"
+                    },
+                    "enableSolutionsTraining": {
+                        "value": "[replace(replace(string(parameters('enableSolutionsTraining')),'[',''),']','')]"
+                    },
                     "workspaceName": {
                         "value": "[parameters('workspaceName')]"
                     },
                     "severityLevels": {
                         "value": "[replace(replace(string(parameters('severityLevels')),'[',''),']','')]"
-		     },	
-		     "enableAlerts": {
+					 },	
+					 "enableAlerts": {
                         "value": "[parameters('enableScheduledAlerts')]"
                     },
                     "location": {
