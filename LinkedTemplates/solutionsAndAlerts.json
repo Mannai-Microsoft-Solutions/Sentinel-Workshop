@@ -16,12 +16,12 @@
             "defaultValue": ""
         },
         "enableSolutionsEssentials": {
-            "type": "array",
+            "type": "string",
             "metadata": {
-                "description": "The list of Content Hub Essentials solutions to deploy."
+                "description": "Comma separated essentials enabled solutions"
             },
-            "defaultValue": []
-        },	    
+            "defaultValue": ""
+        },
         "enableSolutionsTraining": {
             "type": "string",
             "metadata": {
@@ -38,7 +38,7 @@
         },
         "severityLevels": {
             "type": "string"
-        },		
+        },
         "location": {
             "type": "string"
         },
@@ -52,8 +52,8 @@
     },
     "functions": [],
     "variables": {
-       "identityName": "[concat('userIdentity',uniqueString(resourceGroup().id))]",
-       "solutions": "[replace(concat(parameters('enableSolutions1P'),if(and(not(empty(parameters('enableSolutions1P'))),not(empty(parameters('enableSolutionsEssentials')))),concat(',',parameters('enableSolutionsEssentials')),parameters('enableSolutionsEssentials')),if(or(not(empty(parameters('enableSolutionsEssentials'))),not(empty(parameters('enableSolutions1P')))),concat(',',parameters('enableSolutionsTraining')),parameters('enableSolutionsTraining'))),'\"','\\\"')]",
+        "identityName": "[concat('userIdentity',uniqueString(resourceGroup().id))]",
+        "solutions": "[replace(concat(parameters('enableSolutions1P'),if(and(not(empty(parameters('enableSolutions1P'))),not(empty(parameters('enableSolutionsEssentials')))),concat(',',parameters('enableSolutionsEssentials')),parameters('enableSolutionsEssentials')),if(or(not(empty(parameters('enableSolutionsEssentials'))),not(empty(parameters('enableSolutions1P')))),concat(',',parameters('enableSolutionsTraining')),parameters('enableSolutionsTraining'))),'\"','\\\"')]",
         "severities": "[if(empty(parameters('severityLevels')),'None',parameters('severityLevels'))]"
     },
     "resources": [
