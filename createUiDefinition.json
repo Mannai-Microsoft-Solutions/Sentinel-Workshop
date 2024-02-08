@@ -648,8 +648,8 @@
         ],
         "outputs": {
            "workspaceName": "[if(empty(steps('sentinelWorkspace').existingWorkspaceSection.laWorkspaceSelector.name),steps('sentinelWorkspace').newWorkspaceSection.workspaceName,steps('sentinelWorkspace').existingWorkspaceSection.laWorkspaceSelector.name)]",
-			"dailyQuota": "[steps('sentinelWorkspace').workspaceDetails.dailyQuota]",
-			"dataRetention": "[string(steps('sentinelWorkspace').workspaceDetails.retentionSlider)]",
+	   "dailyQuota": "[steps('sentinelWorkspace').workspaceDetails.dailyQuota]",
+	    "dataRetention": "[string(steps('sentinelWorkspace').workspaceDetails.retentionSlider)]",
             "pricingTier": "[steps('sentinelWorkspace').workspaceDetails.pricingTier]",
             "capacityReservation": "[steps('sentinelWorkspace').workspaceDetails.capacityReservation]",
             "enableUeba": "[steps('settings').enableUeba]",
