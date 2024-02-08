@@ -92,7 +92,7 @@
             "defaultValue": []
         },
         "enableSolutionsEssentials": {
-            "type": "array",
+            "type": "string",
             "metadata": {
                 "description": "The list of Content Hub Essentials solutions to deploy."
             },
@@ -136,7 +136,7 @@
             },
             "defaultValue": false
         },		
-		"enableScheduledAlerts": {
+	"enableScheduledAlerts": {
             "type": "bool",
             "metadata": {
                 "description": "Enable Scheduled analytics rules"
@@ -299,8 +299,8 @@
                     },
                     "severityLevels": {
                         "value": "[replace(replace(string(parameters('severityLevels')),'[',''),']','')]"
-					 },	
-					 "enableAlerts": {
+		     },	
+		     "enableAlerts": {
                         "value": "[parameters('enableScheduledAlerts')]"
                     },
                     "location": {
