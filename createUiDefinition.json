@@ -265,7 +265,7 @@
                       },
                       "visible": true
                   },
-		  {
+		          {
                     "name": "enableSolutionsEssentials",
                       "type": "Microsoft.Common.DropDown",
                       "label": "Select Essentials Content Hub solutions to install",
@@ -287,6 +287,34 @@
                                 "label": "UEBA Essentials",
                                 "description": "The Sentinel UEBA content package will provide you with various queries based on UEBA tables, that allows you to hunt for tailored threat scenarios.",
                                 "value": "UEBA Essentials"
+                            }
+                          ],
+                          "required": false
+                      },
+                      "visible": false
+                  },
+				  {
+                    "name": "enableSolutionsTraining",
+                      "type": "Microsoft.Common.DropDown",
+                      "label": "Select Training and Tutorials Content Hub solutions to install",
+                      "placeholder": "",
+                      "multiselect": true,
+                      "filter": true,
+                      "filterPlaceholder": "Filter items ...",
+                      "multiLine": true,
+                      "defaultDescription": "A value for selection",
+                      "toolTip": "Select the training and tutorials solutions that you would like to install",
+                      "constraints": {
+                          "allowedValues": [
+                            {
+                                "label": "KQL Training",
+                                "description": "The KQL Training solution for Microsoft Sentinel contains resources that can help up – skill on understanding the fundamentals and using KQL in advanced scenarios like authoring effective and optimized queries used in Sentinel Analytics, Hunting Queries, Workbooks, etc.",
+                                "value": "KQL Training"
+                            },
+                            {
+                                "label": "Training Lab",
+                                "description": "Microsoft Sentinel Training Lab helps you get ramped up with Microsoft Sentinel providing hands-on practical experience for product features, capabilities, and scenarios.",
+                                "value": "Microsoft Sentinel Training Lab"
                             }
                           ],
                           "required": false
@@ -508,6 +536,7 @@
             "enableDiagnostics": "[steps('settings').enableDiagnostics]",
             "enableSolutions1P": "[steps('solutions').enableSolutions1P]",
 	    "enableSolutionsEssentials": "[steps('solutions').enableSolutionsEssentials]",
+	    "enableSolutionsTraining": "[steps('solutions').enableSolutionsTraining]",
             "enableDataConnectors": "[steps('dataConnectors').enableDataConnectors]",			
             "aadStreams": "[steps('dataConnectors').aadStreams]",
             "location": "[location()]",
