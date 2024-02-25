@@ -6,7 +6,7 @@
         "config": {
             "isWizard": false,
             "basics": {
-                 "description": "**Microsoft Sentinel Workshop** deployment \n\n<img width=450 src=\"<img width=450 src=\"https://raw.githubusercontent.com/RakeshPrasad21/SOC/main/mannai/images/Mannai-Logo1.png\">\n\nMannai's one-click-to-deploy customer package. Complete the parameters below of where you would like Microsoft Sentinel to reside, and which data connectors to deploy, and you're done!">\n\nMannai's one-click-to-deploy customer package. Complete the parameters below of where you would like Microsoft Sentinel to reside, and which data connectors to deploy, and you're done!",
+                 "description": "**Microsoft Sentinel Workshop** deployment \n\n<img width=450 src=\"<img width=450 src=\"https://raw.githubusercontent.com/RakeshPrasad21/SOC/main/mannai/images/Mannai-Logo1.png\">\n\nMannai's one-click-to-deploy customer package. Complete the parameters below of where you would like Microsoft Sentinel to reside, and which data connectors to deploy, and you're done!"",
                 "location": {
                     "label": "Location",
                     "toolTip": "Location for all resources",
